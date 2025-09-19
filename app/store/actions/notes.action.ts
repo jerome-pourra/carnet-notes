@@ -4,10 +4,10 @@ import { NoteEntity } from "../types/notes.type";
 import { NOTE_DELETE, NOTE_UPDATE, NOTES_FETCH_FAILURE, NOTES_FETCH_LIST, NOTES_FETCH_SUCCESS } from "./actions";
 import { showSnackbar } from "./snackbar.action";
 
-export const fetchNotes = (userId: number) => async (dispatch: Dispatch) => {
+export const fetchNotes = () => async (dispatch: Dispatch) => {
   dispatch({ type: NOTES_FETCH_LIST });
   try {
-    const response = await fetch(`${BACKEND_ROUTE_NOTES}?userId=${userId}`, { method: 'GET' });
+    const response = await fetch(`${BACKEND_ROUTE_NOTES}`, { method: 'GET' });
     const data = await response.json();
     dispatch({ type: NOTES_FETCH_SUCCESS, payload: data });
   } catch {
