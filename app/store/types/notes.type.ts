@@ -8,5 +8,6 @@ export interface NoteEntity {
 
 export interface NoteState {
   loading: boolean;
+  item: NoteEntity | null;
   list: NoteEntity[];
 }

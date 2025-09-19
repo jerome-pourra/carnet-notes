@@ -1,8 +1,20 @@
 import { BACKEND_ROUTE_NOTES } from "@/app/config";
 import { Dispatch } from "@reduxjs/toolkit";
 import { NoteEntity } from "../types/notes.type";
-import { NOTE_DELETE, NOTE_UPDATE, NOTES_FETCH_FAILURE, NOTES_FETCH_LIST, NOTES_FETCH_SUCCESS } from "./actions";
+import { NOTE_DELETE, NOTE_FETCH, NOTE_FETCH_FAILURE, NOTE_FETCH_SUCCESS, NOTE_UPDATE, NOTES_FETCH_FAILURE, NOTES_FETCH_LIST, NOTES_FETCH_SUCCESS } from "./actions";
 import { showSnackbar } from "./snackbar.action";
+
+export const fetchNote = (id: number) => async (dispatch: Dispatch) => {
+  dispatch({ type: NOTE_FETCH });
+  try {
+    const response = await fetch(`${BACKEND_ROUTE_NOTES}/${id}`, { method: 'GET' });
+    const data = await response.json();
+    dispatch({ type: NOTE_FETCH_SUCCESS, payload: data });
+  } catch {
+    dispatch({ type: NOTE_FETCH_FAILURE });
+    dispatch(showSnackbar('error', 'Failed to fetch notes'));
+  }
+};
 
 export const fetchNotes = () => async (dispatch: Dispatch) => {
   dispatch({ type: NOTES_FETCH_LIST });

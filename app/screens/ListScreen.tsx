@@ -1,8 +1,10 @@
 import { useNavigation } from "@react-navigation/native";
 import { NativeStackNavigationProp } from "@react-navigation/native-stack";
 import { useCallback, useEffect } from "react";
-import { ActivityIndicator, FlatList, Text, TouchableOpacity, View } from "react-native";
+import { FlatList, Text, TouchableOpacity, View } from "react-native";
 import { useDispatch, useSelector } from "react-redux";
+import { EmptyData } from "../components/Empty";
+import { Loading } from "../components/Loading";
 import { fetchNotes } from "../store/actions/notes.action";
 import { notesSelector } from "../store/selectors/notes.selector";
 import { AppDispatch } from "../store/store";
@@ -34,17 +36,25 @@ export const ListScreen = () => {
     dispatch(fetchNotes());
   }, [dispatch]);
 
+  useEffect(() => {
+    // DEBUG
+    console.log('List updated:', list);
+  }, [list]);
+
   if (loading) {
     return (
-      <View>
-        <ActivityIndicator />
-        <Text>Loading data...</Text>
-      </View>
-    );
+      <Loading />
+    )
+  }
+
+  if (!list || list.length === 0) {
+    return (
+      <EmptyData />
+    )
   }
 
   return (
-    <View style={{ flex: 1, padding: 24 }}>
+    <View>
       <View style={{ borderWidth: 1, marginTop: 16 }}>
         <View style={{ flexDirection: 'row', borderBottomWidth: 1, padding: 10 }}>
           <Text style={{ flex: 2, fontWeight: 'bold' }}>Title</Text>

@@ -3,12 +3,12 @@ import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import { DetailsScreen } from "../screens/DetailsScreen";
 import { ListScreen } from "../screens/ListScreen";
 
-export type PackagesStackParamList = {
+export type StackParamList = {
   List: undefined;
   Details: { id: number };
 };
 
-const Stack = createNativeStackNavigator<PackagesStackParamList>({
+const Stack = createNativeStackNavigator<StackParamList>({
   screens: {
     List: ListScreen,
     Details: DetailsScreen,
@@ -22,6 +22,7 @@ export const Router = () => (
         headerShown: true,
         contentStyle: {
           flex: 1,
+          padding: 16,
         }
       }}
     >
