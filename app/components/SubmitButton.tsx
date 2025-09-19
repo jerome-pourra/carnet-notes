@@ -14,7 +14,7 @@ export const SubmitButton = ({
   return (
     <TouchableOpacity
       style={{
-        backgroundColor: disabled ? '#CCCCCC' : '#007AFF',
+        backgroundColor: disabled ? 'gray' : 'blue',
         padding: 12,
         alignItems: 'center',
         opacity: disabled ? 0.6 : 1,
@@ -23,7 +23,7 @@ export const SubmitButton = ({
       disabled={disabled}
     >
       <Text style={{
-        color: disabled ? '#666666' : 'white',
+        color: disabled ? 'black' : 'white',
         fontSize: 16,
         fontWeight: 'bold'
       }}>

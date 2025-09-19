@@ -60,15 +60,7 @@ npm run android
 CarnetNotes/
 ├── app/
 │   ├── components/          # Composants réutilisables
-│   │   ├── Empty.tsx        # Composant pour état vide
-│   │   ├── Loading.tsx      # Composant de chargement
-│   │   ├── Router.tsx       # Configuration de navigation
-│   │   └── Snackbar.tsx     # Notifications
 │   ├── screens/             # Écrans de l'application
-│   │   ├── ListScreen.tsx   # Liste des notes
-│   │   ├── AddScreen.tsx    # Ajout de note
-│   │   ├── DetailsScreen.tsx # Détails d'une note
-│   │   └── UpdateScreen.tsx # Modification d'une note
 │   ├── store/               # Gestion d'état Redux
 │   │   ├── actions/         # Actions Redux
 │   │   ├── reducers/        # Reducers Redux
@@ -89,4 +81,3 @@ CarnetNotes/
 - La recherche est implémentée côté client pour éviter les problèmes de compatibilité
 - Le serveur **JSON** doit être redémarré si des modifications manuelles sont faites sur `db.json`
 - Si des données sont modifiées manuellement dans `db.json`, l'application peut avoir des états Redux incohérents utilisez le bouton "Refresh" pour synchroniser les données
-- Il n'y a pas encore de validation des formulaires implémentée dans l'application
