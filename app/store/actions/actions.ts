@@ -1,1 +1,12 @@
 export const EXAMPLE = 'EXAMPLE';
+
+export const SNACKBAR_SHOW = 'SNACKBAR_SHOW';
+export const SNACKBAR_HIDE = 'SNACKBAR_HIDE';
+
+export const NOTE_ADD = "NOTES_ADD";
+export const NOTE_DELETE = "NOTES_DELETE";
+export const NOTE_UPDATE = "NOTES_UPDATE";
+
+export const NOTES_FETCH_LIST = "NOTES_FETCH_LIST";
+export const NOTES_FETCH_SUCCESS = "NOTES_FETCH_SUCCESS";
+export const NOTES_FETCH_FAILURE = "NOTES_FETCH_FAILURE";

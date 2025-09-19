@@ -1,365 +1,39 @@
 {
-  "users": [
+  "notes": [
     {
-      "id": "1",
-      "firstname": "John",
-      "lastname": "Doe",
-      "email": "john.doe@example.com",
-      "password": "password",
-      "isAdmin": true
+      "id": 1,
+      "title": "Liste des courses",
+      "content": "- Lait\n- Pain\n- Œufs\n- Fromage\n- Pommes\n- Pâtes",
+      "createdAt": "2025-09-15T10:30:00.000Z",
+      "updatedAt": "2025-09-15T10:30:00.000Z"
     },
     {
-      "id": "2",
-      "firstname": "Alice",
-      "lastname": "Martin",
-      "email": "alice.martin@example.com",
-      "password": "password",
-      "isAdmin": false
+      "id": 2,
+      "title": "Idées de projet",
+      "content": "Application mobile de gestion de tâches avec géolocalisation et notifications push. Intégrer une API météo pour adapter les notifications selon le temps.",
+      "createdAt": "2025-09-16T14:20:15.000Z",
+      "updatedAt": "2025-09-17T09:45:30.000Z"
     },
     {
-      "id": "3",
-      "firstname": "Pierre",
-      "lastname": "Dupont",
-      "email": "pierre.dupont@example.com",
-      "password": "password",
-      "isAdmin": false
+      "id": 3,
+      "title": "Recette gâteau au chocolat",
+      "content": "Ingrédients :\n- 200g chocolat noir\n- 150g beurre\n- 100g sucre\n- 3 œufs\n- 50g farine\n\nFaire fondre le chocolat avec le beurre, mélanger avec les autres ingrédients. Cuire 25min à 180°C.",
+      "createdAt": "2025-09-17T16:15:22.000Z",
+      "updatedAt": "2025-09-17T16:15:22.000Z"
     },
     {
-      "id": "4",
-      "firstname": "Sophie",
-      "lastname": "Durand",
-      "email": "sophie.durand@example.com",
-      "password": "password",
-      "isAdmin": false
+      "id": 4,
+      "title": "Rappels importants",
+      "content": "- Rendez-vous dentiste le 25/09\n- Renouveler assurance voiture\n- Appeler maman pour son anniversaire\n- Révision voiture avant 15000km",
+      "createdAt": "2025-09-18T08:00:00.000Z",
+      "updatedAt": "2025-09-19T07:30:45.000Z"
     },
     {
-      "id": "5",
-      "firstname": "Mehdi",
-      "lastname": "Benali",
-      "email": "mehdi.benali@example.com",
-      "password": "password",
-      "isAdmin": false
-    }
-  ],
-  "packages": [
-    {
-      "userId": 1,
-      "title": "Wireless Bluetooth Headphones",
-      "description": "Premium noise-cancelling headphones",
-      "status": "pending",
-      "carrier": "DHL",
-      "weight": "0.5kg",
-      "origin": "Shanghai, China",
-      "destination": "Paris, France",
-      "id": "1"
-    },
-    {
-      "userId": 1,
-      "title": "Gaming Keyboardddd",
-      "description": "Mechanical RGB keyboard",
-      "status": "transit",
-      "carrier": "FedEx",
-      "weight": "1.2kg",
-      "origin": "Seoul, South Korea",
-      "destination": "Paris, France",
-      "id": "2"
-    },
-    {
-      "userId": 1,
-      "title": "Book Settttt",
-      "description": "Programming books collection",
-      "status": "processing",
-      "carrier": "UPS",
-      "weight": "2.1kg",
-      "origin": "London, UK",
-      "destination": "Paris, France",
-      "id": "3"
-    },
-    {
-      "userId": 1,
-      "title": "Coffee Beans",
-      "description": "Premium Ethiopian coffee beans",
-      "status": "transit",
-      "carrier": "DHL",
-      "weight": "1.0kg",
-      "origin": "Addis Ababa, Ethiopia",
-      "destination": "Paris, France",
-      "id": "4"
-    },
-    {
-      "id": "5",
-      "userId": 1,
-      "title": "Phone Case",
-      "description": "Clear protective case",
-      "status": "transit",
-      "carrier": "UPS",
-      "weight": "0.1kg",
-      "origin": "Hong Kong",
-      "destination": "Paris, France"
-    },
-    {
-      "id": "6",
-      "userId": 1,
-      "title": "Watch Band",
-      "description": "Leather watch strap",
-      "status": "processing",
-      "carrier": "FedEx",
-      "weight": "0.2kg",
-      "origin": "Florence, Italy",
-      "destination": "Paris, France"
-    },
-    {
-      "id": "7",
-      "userId": 2,
-      "title": "Smartphone Case",
-      "description": "Protective silicone case",
-      "status": "pending",
-      "carrier": "UPS",
-      "weight": "0.1kg",
-      "origin": "Hong Kong",
-      "destination": "Lyon, France"
-    },
-    {
-      "id": "8",
-      "userId": 2,
-      "title": "Yoga Mat",
-      "description": "Eco-friendly yoga mat",
-      "status": "transit",
-      "carrier": "DHL",
-      "weight": "1.0kg",
-      "origin": "Mumbai, India",
-      "destination": "Lyon, France"
-    },
-    {
-      "id": "9",
-      "userId": 2,
-      "title": "Running Shoes",
-      "description": "Nike Air Max sneakers",
-      "status": "transit",
-      "carrier": "FedEx",
-      "weight": "0.8kg",
-      "origin": "Vietnam",
-      "destination": "Lyon, France"
-    },
-    {
-      "id": "10",
-      "userId": 2,
-      "title": "Bluetooth Speaker",
-      "description": "Portable wireless speaker",
-      "status": "processing",
-      "carrier": "DHL",
-      "weight": "0.6kg",
-      "origin": "Shenzhen, China",
-      "destination": "Lyon, France"
-    },
-    {
-      "id": "11",
-      "userId": 2,
-      "title": "Laptop Bag",
-      "description": "Waterproof laptop backpack",
-      "status": "transit",
-      "carrier": "UPS",
-      "weight": "1.5kg",
-      "origin": "Barcelona, Spain",
-      "destination": "Lyon, France"
-    },
-    {
-      "id": "12",
-      "userId": 3,
-      "title": "Coffee Machine",
-      "description": "Nespresso automatic coffee maker",
-      "status": "processing",
-      "carrier": "UPS",
-      "weight": "3.5kg",
-      "origin": "Milan, Italy",
-      "destination": "Marseille, France"
-    },
-    {
-      "id": "13",
-      "userId": 3,
-      "title": "Kitchen Knife Set",
-      "description": "Professional chef knives",
-      "status": "pending",
-      "carrier": "DHL",
-      "weight": "2.0kg",
-      "origin": "Solingen, Germany",
-      "destination": "Marseille, France"
-    },
-    {
-      "id": "14",
-      "userId": 3,
-      "title": "Wine Glasses",
-      "description": "Crystal wine glass set",
-      "status": "transit",
-      "carrier": "FedEx",
-      "weight": "1.8kg",
-      "origin": "Murano, Italy",
-      "destination": "Marseille, France"
-    },
-    {
-      "id": "15",
-      "userId": 3,
-      "title": "Cutting Board",
-      "description": "Bamboo cutting board",
-      "status": "processing",
-      "carrier": "UPS",
-      "weight": "0.7kg",
-      "origin": "Kyoto, Japan",
-      "destination": "Marseille, France"
-    },
-    {
-      "id": "16",
-      "userId": 3,
-      "title": "Spice Rack",
-      "description": "Wooden spice organizer",
-      "status": "pending",
-      "carrier": "DHL",
-      "weight": "1.2kg",
-      "origin": "Mumbai, India",
-      "destination": "Marseille, France"
-    },
-    {
-      "id": "17",
-      "userId": 4,
-      "title": "Laptop Stand",
-      "description": "Adjustable aluminum laptop stand",
-      "status": "delivered",
-      "carrier": "FedEx",
-      "weight": "0.9kg",
-      "origin": "Munich, Germany",
-      "destination": "Nice, France"
-    },
-    {
-      "id": "18",
-      "userId": 4,
-      "title": "Desk Lamp",
-      "description": "LED adjustable desk lamp",
-      "status": "out_for_delivery",
-      "carrier": "UPS",
-      "weight": "1.1kg",
-      "origin": "Stockholm, Sweden",
-      "destination": "Nice, France"
-    },
-    {
-      "id": "19",
-      "userId": 4,
-      "title": "Wireless Mouse",
-      "description": "Ergonomic wireless mouse",
-      "status": "shipped",
-      "carrier": "DHL",
-      "weight": "0.3kg",
-      "origin": "Zurich, Switzerland",
-      "destination": "Nice, France"
-    },
-    {
-      "id": "20",
-      "userId": 4,
-      "title": "Monitor Stand",
-      "description": "Adjustable monitor arm",
-      "status": "processing",
-      "carrier": "FedEx",
-      "weight": "2.5kg",
-      "origin": "Amsterdam, Netherlands",
-      "destination": "Nice, France"
-    },
-    {
-      "id": "21",
-      "userId": 4,
-      "title": "Webcam",
-      "description": "4K HD webcam",
-      "status": "in_transit",
-      "carrier": "UPS",
-      "weight": "0.4kg",
-      "origin": "San Jose, USA",
-      "destination": "Nice, France"
-    },
-    {
-      "id": "22",
-      "userId": 4,
-      "title": "USB Hub",
-      "description": "7-port USB 3.0 hub",
-      "status": "cancelled",
-      "carrier": "DHL",
-      "weight": "0.2kg",
-      "origin": "Taipei, Taiwan",
-      "destination": "Nice, France"
-    },
-    {
-      "id": "23",
-      "userId": 5,
-      "title": "Fitness Tracker",
-      "description": "Smart fitness watch",
-      "status": "delivered",
-      "carrier": "FedEx",
-      "weight": "0.3kg",
-      "origin": "Seoul, South Korea",
-      "destination": "Toulouse, France"
-    },
-    {
-      "id": "24",
-      "userId": 5,
-      "title": "Protein Powder",
-      "description": "Whey protein supplement",
-      "status": "shipped",
-      "carrier": "UPS",
-      "weight": "2.2kg",
-      "origin": "Dublin, Ireland",
-      "destination": "Toulouse, France"
-    },
-    {
-      "id": "25",
-      "userId": 5,
-      "title": "Resistance Bands",
-      "description": "Exercise resistance bands set",
-      "status": "out_for_delivery",
-      "carrier": "DHL",
-      "weight": "0.8kg",
-      "origin": "Prague, Czech Republic",
-      "destination": "Toulouse, France"
-    },
-    {
-      "id": "26",
-      "userId": 5,
-      "title": "Water Bottle",
-      "description": "Insulated stainless steel bottle",
-      "status": "processing",
-      "carrier": "FedEx",
-      "weight": "0.5kg",
-      "origin": "Portland, USA",
-      "destination": "Toulouse, France"
-    },
-    {
-      "id": "27",
-      "userId": 5,
-      "title": "Gym Bag",
-      "description": "Waterproof sports bag",
-      "status": "in_transit",
-      "carrier": "UPS",
-      "weight": "1.0kg",
-      "origin": "Manchester, UK",
-      "destination": "Toulouse, France"
-    },
-    {
-      "id": "28",
-      "userId": 5,
-      "title": "Foam Roller",
-      "description": "Muscle recovery foam roller",
-      "status": "pending",
-      "carrier": "DHL",
-      "weight": "1.3kg",
-      "origin": "Melbourne, Australia",
-      "destination": "Toulouse, France"
-    },
-    {
-      "id": "29",
-      "userId": 5,
-      "title": "Pre-workout Supplement",
-      "description": "Energy booster supplement",
-      "status": "delivered",
-      "carrier": "FedEx",
-      "weight": "0.6kg",
-      "origin": "Los Angeles, USA",
-      "destination": "Toulouse, France"
+      "id": 5,
+      "title": "Citations motivantes",
+      "content": "\"Le succès, c'est se promener d'échec en échec tout en restant motivé.\" - Winston Churchill\n\n\"La seule façon de faire du bon travail, c'est d'aimer ce que vous faites.\" - Steve Jobs",
+      "createdAt": "2025-09-19T12:10:33.000Z",
+      "updatedAt": "2025-09-19T12:10:33.000Z"
     }
   ]
 }
