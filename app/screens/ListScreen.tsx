@@ -24,10 +24,17 @@ export const ListScreen = () => {
   const dispatch = useDispatch<AppDispatch>();
   const navigation = useNavigation<ListScreenNavigationProp>();
 
+  // Navigate to Add screen
   const handleAdd = useCallback(() => {
     navigation.navigate('Add');
   }, [dispatch, navigation]);
 
+  // Refresh list of notes by button
+  const handleRefresh = useCallback(() => {
+    dispatch(fetchNotes());
+  }, [dispatch]);
+
+  // Render item for FlatList
   const renderItem = useCallback(({ item }: { item: NoteEntity }) => (
     <TouchableOpacity
       style={{ flexDirection: 'row', alignItems: 'center', borderBottomWidth: 1, padding: 10 }}
@@ -38,12 +45,13 @@ export const ListScreen = () => {
     </TouchableOpacity>
   ), [navigation]);
 
+  // Fetch notes on component mount
   useEffect(() => {
     dispatch(fetchNotes());
   }, [dispatch]);
 
+  // DEBUG when list changes
   useEffect(() => {
-    // DEBUG
     console.log('List selector:', list.map(i => i.title));
   }, [list]);
 
@@ -72,8 +80,9 @@ export const ListScreen = () => {
           keyExtractor={(item) => item.id.toString()}
         />
       </View>
-      <View style={{ marginTop: 24 }}>
+      <View style={{ marginTop: 24, flexDirection: 'row', gap: 10, justifyContent: 'flex-end' }}>
         <Button title="Add" onPress={handleAdd} />
+        <Button title="Refresh" onPress={handleRefresh} />
       </View>
     </View>
   );

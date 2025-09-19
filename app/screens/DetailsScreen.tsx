@@ -41,12 +41,13 @@ export const DetailsScreen = ({
     navigation.goBack();
   }, [dispatch, navigation, item]);
 
+  // Fetch note on component mount and when route.params change
   useEffect(() => {
     dispatch(fetchNote(id));
   }, [id, dispatch]);
 
+  // DEBUG when item changes
   useEffect(() => {
-    // DEBUG
     console.log(`Item ${id} selector:`, item?.title);
   }, [item]);
 
@@ -93,7 +94,7 @@ export const DetailsScreen = ({
           <Text style={{ flex: 2 }}>{formatDate(item.updatedAt)}</Text>
         </View>
       </View>
-      <View style={{ marginTop: 24, flexDirection: 'row', justifyContent: 'space-between' }}>
+      <View style={{ marginTop: 24, flexDirection: 'row', gap: 10, justifyContent: 'flex-end' }}>
         <Button title="Delete" onPress={handleDelete} />
         <Button title="Update" onPress={handleUpdate} />
       </View>
