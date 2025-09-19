@@ -1,0 +1,39 @@
+{
+  "notes": [
+    {
+      "id": 1,
+      "title": "Liste des courses",
+      "content": "- Lait\n- Pain\n- Œufs\n- Fromage\n- Pommes\n- Pâtes",
+      "createdAt": "2025-09-15T10:30:00.000Z",
+      "updatedAt": "2025-09-15T10:30:00.000Z"
+    },
+    {
+      "id": 2,
+      "title": "Idées de projet",
+      "content": "Application mobile de gestion de tâches avec géolocalisation et notifications push. Intégrer une API météo pour adapter les notifications selon le temps.",
+      "createdAt": "2025-09-16T14:20:15.000Z",
+      "updatedAt": "2025-09-17T09:45:30.000Z"
+    },
+    {
+      "id": 3,
+      "title": "Recette gâteau au chocolat",
+      "content": "Ingrédients :\n- 200g chocolat noir\n- 150g beurre\n- 100g sucre\n- 3 œufs\n- 50g farine\n\nFaire fondre le chocolat avec le beurre, mélanger avec les autres ingrédients. Cuire 25min à 180°C.",
+      "createdAt": "2025-09-17T16:15:22.000Z",
+      "updatedAt": "2025-09-17T16:15:22.000Z"
+    },
+    {
+      "id": 4,
+      "title": "Rappels importants",
+      "content": "- Rendez-vous dentiste le 25/09\n- Renouveler assurance voiture\n- Appeler maman pour son anniversaire\n- Révision voiture avant 15000km",
+      "createdAt": "2025-09-18T08:00:00.000Z",
+      "updatedAt": "2025-09-19T07:30:45.000Z"
+    },
+    {
+      "id": 5,
+      "title": "Citations motivantes",
+      "content": "\"Le succès, c'est se promener d'échec en échec tout en restant motivé.\" - Winston Churchill\n\n\"La seule façon de faire du bon travail, c'est d'aimer ce que vous faites.\" - Steve Jobs",
+      "createdAt": "2025-09-19T12:10:33.000Z",
+      "updatedAt": "2025-09-19T12:10:33.000Z"
+    }
+  ]
+}

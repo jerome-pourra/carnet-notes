@@ -12,7 +12,7 @@ export const CustomSnackbar = () => {
     if (show && message) {
       const timer = setTimeout(() => {
         dispatch({ type: SNACKBAR_HIDE });
-      }, 1000);
+      }, 3000);
       return () => clearTimeout(timer);
     }
   }, [show, message, dispatch]);

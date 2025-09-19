@@ -1,13 +1,14 @@
 
 import { AppDispatch } from "@/app/store/store";
 import { NativeStackScreenProps } from "@react-navigation/native-stack";
-import { useEffect } from "react";
-import { Text, View } from "react-native";
+import { useCallback, useEffect } from "react";
+import { Button, Text, View } from "react-native";
 import { useDispatch, useSelector } from "react-redux";
 import { EmptyData } from "../components/Empty";
 import { Loading } from "../components/Loading";
 import { StackParamList } from "../components/Router";
-import { fetchNote } from "../store/actions/notes.action";
+import { deleteNote, fetchNote } from "../store/actions/notes.action";
+import { showSnackbar } from "../store/actions/snackbar.action";
 import { notesSelector } from "../store/selectors/notes.selector";
 
 type DetailsScreenNavigationProp = NativeStackScreenProps<StackParamList, 'Details'>
@@ -24,10 +25,15 @@ export const DetailsScreen = ({
   //   navigation.navigate('Update', { pkg });
   // }, [navigation, pkg]);
 
-  // const handleDelete = useCallback(() => {
-  //   dispatch(deletePackage(pkg));
-  //   navigation.goBack();
-  // }, [dispatch, navigation, pkg]);
+  const handleDelete = useCallback(() => {
+    if (!item) {
+      // WTF t'es pas trop sencé avoir le btn delete si y'a pas d'item... la vue des details est pas rendu ;)
+      dispatch(showSnackbar('error', 'No item to delete'));
+      return;
+    }
+    dispatch(deleteNote(item.id, item.title));
+    navigation.goBack();
+  }, [dispatch, navigation, item]);
 
   useEffect(() => {
     dispatch(fetchNote(id));
@@ -81,8 +87,8 @@ export const DetailsScreen = ({
         </View>
       </View>
       <View style={{ marginTop: 24, flexDirection: 'row', justifyContent: 'space-between' }}>
-        {/* <Button title="Delete" onPress={handleDelete} />
-        <Button title="Update" onPress={handleUpdate} /> */}
+        <Button title="Delete" onPress={handleDelete} />
+        {/* <Button title="Update" onPress={handleUpdate} /> */}
       </View>
     </View>
   );
