@@ -1,43 +1,33 @@
 import { useNavigation } from "@react-navigation/native";
 import { NativeStackNavigationProp } from "@react-navigation/native-stack";
-import { useCallback, useEffect, useState } from "react";
+import { useCallback, useState } from "react";
 import { Button, FlatList, Text, TextInput, TouchableOpacity, View } from "react-native";
-import { useDispatch, useSelector } from "react-redux";
 import { EmptyData } from "../components/Empty";
 import { Loading } from "../components/Loading";
 import { StackParamList } from "../components/Router";
-import { fetchNotes } from "../store/actions/notes.action";
-import { notesSelector } from "../store/selectors/notes.selector";
-import { AppDispatch } from "../store/store";
+import { useNotes } from "../hooks/useNotes";
 import { NoteEntity } from "../store/types/notes.type";
 import { formatDate, formatText } from "../utils/format";
 
 type ListScreenNavigationProp = NativeStackNavigationProp<StackParamList, 'List'>;
 
 export const ListScreen = () => {
-  const { loading, list } = useSelector(notesSelector);
-  const dispatch = useDispatch<AppDispatch>();
   const navigation = useNavigation<ListScreenNavigationProp>();
+  const { loading, notes, hasNotes, fetchAllNotes } = useNotes();
 
   const [searchQuery, setSearchQuery] = useState<string>('');
 
-  // Navigate to Add screen
   const handleAdd = useCallback(() => {
     navigation.navigate('Add');
-  }, [dispatch, navigation]);
-
-  // Refresh list
-  const handleRefresh = useCallback(() => {
-    dispatch(fetchNotes());
-  }, [dispatch]);
+  }, [navigation]);
 
   // Filter list based on search query (only client-side...)
   const filteredList = useCallback(() => {
     if (!searchQuery.trim()) {
-      return list;
+      return notes;
     }
-    return list.filter(item => formatText(item.title).includes(formatText(searchQuery)));
-  }, [list, searchQuery]);
+    return notes.filter(item => formatText(item.title).includes(formatText(searchQuery)));
+  }, [notes, searchQuery]);
 
   // Render item for FlatList
   const renderItem = useCallback(({ item }: { item: NoteEntity }) => (
@@ -53,33 +43,12 @@ export const ListScreen = () => {
   // Render when list is empty
   const renderEmptyComponent = useCallback(() => (
     <View style={{ padding: 16, alignItems: 'center' }}>
-      <Text>
-        {`No notes found for "${searchQuery}"`}
-      </Text>
+      <Text>{`No notes found for "${searchQuery}"`}</Text>
     </View>
   ), [searchQuery]);
 
-  // Fetch notes on component mount
-  useEffect(() => {
-    dispatch(fetchNotes());
-  }, [dispatch]);
-
-  // DEBUG when list changes
-  useEffect(() => {
-    // console.log('List selector:', list.map(i => i.title));
-  }, [list]);
-
-  if (loading) {
-    return (
-      <Loading />
-    )
-  }
-
-  if (!list || list.length === 0) {
-    return (
-      <EmptyData />
-    )
-  }
+  if (loading) return <Loading />
+  if (!hasNotes) return <EmptyData />;
 
   return (
     <View style={{ flex: 1 }}>
@@ -104,7 +73,7 @@ export const ListScreen = () => {
       </View>
       <View style={{ marginTop: 24, flexDirection: 'row', gap: 10, justifyContent: 'flex-end' }}>
         <Button title="Add" onPress={handleAdd} />
-        <Button title="Refresh" onPress={handleRefresh} />
+        <Button title="Refresh" onPress={fetchAllNotes} />
       </View>
     </View>
   );

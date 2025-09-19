@@ -11,7 +11,7 @@ export const fetchNote = (id: number) => async (dispatch: Dispatch) => {
     const response = await fetchWithTimeout(`${BACKEND_ROUTE_NOTES}/${id}`, { method: 'GET' });
     const data = await response.json();
     dispatch({ type: NOTE_FETCH_SUCCESS, payload: data });
-  } catch (error: unknown) {
+  } catch {
     dispatch({ type: NOTE_FETCH_FAILURE });
     dispatch(showSnackbar('error', 'Failed to fetch notes'));
   }
@@ -23,7 +23,7 @@ export const fetchNotes = () => async (dispatch: Dispatch) => {
     const response = await fetchWithTimeout(`${BACKEND_ROUTE_NOTES}`, { method: 'GET' });
     const data = await response.json();
     dispatch({ type: NOTES_FETCH_SUCCESS, payload: data });
-  } catch (error: unknown) {
+  } catch {
     dispatch({ type: NOTES_FETCH_FAILURE });
     dispatch(showSnackbar('error', 'Failed to fetch notes'));
   }
@@ -40,7 +40,7 @@ export const searchNotes = (query: string) => async (dispatch: Dispatch) => {
     const response = await fetchWithTimeout(`${BACKEND_ROUTE_NOTES}?title_like=${encodeURIComponent(query)}`, { method: 'GET' });
     const data = await response.json();
     dispatch({ type: NOTES_FETCH_SUCCESS, payload: data });
-  } catch (error: unknown) {
+  } catch {
     dispatch({ type: NOTES_FETCH_FAILURE });
     dispatch(showSnackbar('error', 'Failed to search notes'));
   }
@@ -56,7 +56,7 @@ export const addNote = (note: Omit<NoteEntity, 'id'>) => async (dispatch: Dispat
     const data = await response.json();
     dispatch({ type: NOTE_ADD, payload: data });
     dispatch(showSnackbar('success', `Note ${note.title} added successfully`));
-  } catch (error: unknown) {
+  } catch {
     dispatch(showSnackbar('error', 'Failed to add note'));
   }
 };
