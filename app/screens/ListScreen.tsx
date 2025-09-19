@@ -5,19 +5,14 @@ import { Button, FlatList, Text, TextInput, TouchableOpacity, View } from "react
 import { useDispatch, useSelector } from "react-redux";
 import { EmptyData } from "../components/Empty";
 import { Loading } from "../components/Loading";
+import { StackParamList } from "../components/Router";
 import { fetchNotes } from "../store/actions/notes.action";
 import { notesSelector } from "../store/selectors/notes.selector";
 import { AppDispatch } from "../store/store";
 import { NoteEntity } from "../store/types/notes.type";
 import { formatDate, formatText } from "../utils/format";
 
-type RootStackParamList = {
-  List: undefined;
-  Add: undefined;
-  Details: { id: number };
-};
-
-type ListScreenNavigationProp = NativeStackNavigationProp<RootStackParamList, 'List'>;
+type ListScreenNavigationProp = NativeStackNavigationProp<StackParamList, 'List'>;
 
 export const ListScreen = () => {
   const { loading, list } = useSelector(notesSelector);
@@ -31,7 +26,7 @@ export const ListScreen = () => {
     navigation.navigate('Add');
   }, [dispatch, navigation]);
 
-  // Refresh list of notes by button
+  // Refresh list
   const handleRefresh = useCallback(() => {
     dispatch(fetchNotes());
   }, [dispatch]);
