@@ -15,23 +15,6 @@ Application mobile de gestion de notes développée avec React Native et Expo. C
 - **Gestion d'état** : Redux pour la gestion centralisée de l'état
 - **API REST** : Communication avec un serveur JSON Server
 
-## Technologies utilisées
-
-- **React Native** 0.79.6
-- **Expo** 53.0.22
-- **TypeScript** 5.8.3
-- **Redux Toolkit** 2.9.0
-- **React Navigation** 7.x
-- **JSON Server** 1.0.0-beta.3
-- **React Redux** 9.2.0
-
-## Prérequis
-
-- **Node.js** 18.x ou supérieur
-- **npm** ou **yarn**
-- **Expo CLI** (optionnel mais recommandé)
-- **Android Studio** (pour émulateur Android) ou **Xcode** (pour simulateur iOS)
-
 ## Installation
 
 1. **Cloner le projet**
