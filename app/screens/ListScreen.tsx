@@ -86,9 +86,6 @@ export const ListScreen = () => {
     )
   }
 
-  console.log("Render ListScreen");
-  
-
   return (
     <View style={{ flex: 1 }}>
       <View style={{ marginBottom: 16, borderWidth: 1 }}>
