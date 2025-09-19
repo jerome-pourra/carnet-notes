@@ -2,6 +2,11 @@
 
 Application mobile de gestion de notes développée avec React Native et Expo. Cette application permet de créer, consulter, modifier et supprimer des notes avec une interface simple.
 
+## Prérequis
+
+- Node.js (version 22 ou supérieure)
+- Un appareil Android/iOS ou un émulateur pour tester l'application (compatible avec Expo SDK 54)
+
 ## Installation
 
 1. **Cloner le projet**
