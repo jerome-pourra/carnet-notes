@@ -9,6 +9,7 @@ import { fetchNotes } from "../store/actions/notes.action";
 import { notesSelector } from "../store/selectors/notes.selector";
 import { AppDispatch } from "../store/store";
 import { NoteEntity } from "../store/types/notes.type";
+import { formatDate } from "../utils/format";
 
 type RootStackParamList = {
   List: undefined;
@@ -28,7 +29,7 @@ export const ListScreen = () => {
       onPress={() => navigation.navigate('Details', { id: item.id })}
     >
       <Text style={{ flex: 2 }}>{item.title}</Text>
-      <Text style={{ flex: 1 }}>{new Date(item.createdAt).toLocaleDateString('en-US')}</Text>
+      <Text style={{ flex: 1 }}>{formatDate(item.updatedAt)}</Text>
     </TouchableOpacity>
   ), [navigation]);
 
@@ -38,7 +39,7 @@ export const ListScreen = () => {
 
   useEffect(() => {
     // DEBUG
-    console.log('List updated:', list);
+    console.log('List updated:', list.map(i => i.title));
   }, [list]);
 
   if (loading) {
@@ -58,7 +59,7 @@ export const ListScreen = () => {
       <View style={{ borderWidth: 1, marginTop: 16 }}>
         <View style={{ flexDirection: 'row', borderBottomWidth: 1, padding: 10 }}>
           <Text style={{ flex: 2, fontWeight: 'bold' }}>Title</Text>
-          <Text style={{ flex: 1, fontWeight: 'bold' }}>Status</Text>
+          <Text style={{ flex: 1, fontWeight: 'bold' }}>Date</Text>
         </View>
         <FlatList
           data={list}

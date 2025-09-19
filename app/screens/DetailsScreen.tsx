@@ -10,6 +10,7 @@ import { StackParamList } from "../components/Router";
 import { deleteNote, fetchNote } from "../store/actions/notes.action";
 import { showSnackbar } from "../store/actions/snackbar.action";
 import { notesSelector } from "../store/selectors/notes.selector";
+import { formatDate } from "../utils/format";
 
 type DetailsScreenNavigationProp = NativeStackScreenProps<StackParamList, 'Details'>
 
@@ -21,14 +22,19 @@ export const DetailsScreen = ({
   const { loading, item } = useSelector(notesSelector);
   const dispatch = useDispatch<AppDispatch>();
 
-  // const handleUpdate = useCallback(() => {
-  //   navigation.navigate('Update', { pkg });
-  // }, [navigation, pkg]);
+  const handleUpdate = useCallback(() => {
+    if (!item) {
+      // WTF !!! t'es pas trop sencé avoir le btn 'update' si y'a pas d'item... la vue des details est pas rendu (you cheat in my app !!!)
+      dispatch(showSnackbar('error', 'No item to update...'));
+      return;
+    }
+    navigation.navigate('Update', { id: item.id });
+  }, [navigation, item]);
 
   const handleDelete = useCallback(() => {
     if (!item) {
-      // WTF t'es pas trop sencé avoir le btn delete si y'a pas d'item... la vue des details est pas rendu ;)
-      dispatch(showSnackbar('error', 'No item to delete'));
+      // WTF !!! t'es pas trop sencé avoir le btn 'delete' si y'a pas d'item... la vue des details est pas rendu (you cheat in my app !!!)
+      dispatch(showSnackbar('error', 'No item to delete...'));
       return;
     }
     dispatch(deleteNote(item.id, item.title));
@@ -41,7 +47,7 @@ export const DetailsScreen = ({
 
   useEffect(() => {
     // DEBUG
-    console.log(`Item ${id} updated:`, item);
+    console.log(`Item ${id} updated:`, item?.title);
   }, [item, id]);
 
   if (loading) {
@@ -51,9 +57,10 @@ export const DetailsScreen = ({
   }
 
   if (!item) {
+    // WTF !!! faut restart le server y'a des modifs qui ont été effectué sur db.json le state list est plus à jour...
     return (
       <EmptyData
-        title={`No data found for id ${id} !!! WHAT ZE FUCK !!!`}
+        title={`No data found for id ${id}`}
       />
     )
   }
@@ -79,16 +86,16 @@ export const DetailsScreen = ({
         </View>
         <View style={{ flexDirection: 'row', borderBottomWidth: 1, padding: 10 }}>
           <Text style={{ flex: 1 }}>Created at</Text>
-          <Text style={{ flex: 2 }}>{item.createdAt}</Text>
+          <Text style={{ flex: 2 }}>{formatDate(item.createdAt)}</Text>
         </View>
-        <View style={{ flexDirection: 'row', borderBottomWidth: 1, padding: 10 }}>
+        <View style={{ flexDirection: 'row', padding: 10 }}>
           <Text style={{ flex: 1 }}>Updated at</Text>
-          <Text style={{ flex: 2 }}>{item.updatedAt}</Text>
+          <Text style={{ flex: 2 }}>{formatDate(item.updatedAt)}</Text>
         </View>
       </View>
       <View style={{ marginTop: 24, flexDirection: 'row', justifyContent: 'space-between' }}>
         <Button title="Delete" onPress={handleDelete} />
-        {/* <Button title="Update" onPress={handleUpdate} /> */}
+        <Button title="Update" onPress={handleUpdate} />
       </View>
     </View>
   );

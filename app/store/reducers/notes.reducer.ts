@@ -30,14 +30,16 @@ export const notesReducer = (state = initialState, action: any) => {
     case NOTE_DELETE:
       return {
         ...state,
-        list: state.list.filter(pkg => pkg.id !== action.payload.id)
+        list: state.list.filter(note => note.id !== action.payload.id),
+        item: state.item?.id === action.payload.id ? null : state.item
       };
 
     case NOTE_UPDATE:
       return {
         ...state,
-        list: state.list.map(pkg =>
-          pkg.id === action.payload.id ? { ...pkg, ...action.payload } : pkg
+        item: action.payload,
+        list: state.list.map(note =>
+          note.id === action.payload.id ? action.payload : note
         )
       };
 
