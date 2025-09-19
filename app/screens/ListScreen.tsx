@@ -1,7 +1,7 @@
 import { useNavigation } from "@react-navigation/native";
 import { NativeStackNavigationProp } from "@react-navigation/native-stack";
 import { useCallback, useEffect } from "react";
-import { FlatList, Text, TouchableOpacity, View } from "react-native";
+import { Button, FlatList, Text, TouchableOpacity, View } from "react-native";
 import { useDispatch, useSelector } from "react-redux";
 import { EmptyData } from "../components/Empty";
 import { Loading } from "../components/Loading";
@@ -13,6 +13,7 @@ import { formatDate } from "../utils/format";
 
 type RootStackParamList = {
   List: undefined;
+  Add: undefined;
   Details: { id: number };
 };
 
@@ -22,6 +23,10 @@ export const ListScreen = () => {
   const { loading, list } = useSelector(notesSelector);
   const dispatch = useDispatch<AppDispatch>();
   const navigation = useNavigation<ListScreenNavigationProp>();
+
+  const handleAdd = useCallback(() => {
+    navigation.navigate('Add');
+  }, [dispatch, navigation]);
 
   const renderItem = useCallback(({ item }: { item: NoteEntity }) => (
     <TouchableOpacity
@@ -39,7 +44,7 @@ export const ListScreen = () => {
 
   useEffect(() => {
     // DEBUG
-    console.log('List updated:', list.map(i => i.title));
+    console.log('List selector:', list.map(i => i.title));
   }, [list]);
 
   if (loading) {
@@ -55,8 +60,8 @@ export const ListScreen = () => {
   }
 
   return (
-    <View>
-      <View style={{ borderWidth: 1, marginTop: 16 }}>
+    <View style={{ flex: 1 }}>
+      <View style={{ borderWidth: 1, flex: 1 }}>
         <View style={{ flexDirection: 'row', borderBottomWidth: 1, padding: 10 }}>
           <Text style={{ flex: 2, fontWeight: 'bold' }}>Title</Text>
           <Text style={{ flex: 1, fontWeight: 'bold' }}>Date</Text>
@@ -66,6 +71,9 @@ export const ListScreen = () => {
           renderItem={renderItem}
           keyExtractor={(item) => item.id.toString()}
         />
+      </View>
+      <View style={{ marginTop: 24 }}>
+        <Button title="Add" onPress={handleAdd} />
       </View>
     </View>
   );

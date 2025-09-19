@@ -2,7 +2,7 @@ import { BACKEND_ROUTE_NOTES } from "@/app/config";
 import { fetchWithTimeout } from "@/app/utils/fetchWithTimeout";
 import { Dispatch } from "@reduxjs/toolkit";
 import { NoteEntity } from "../types/notes.type";
-import { NOTE_DELETE, NOTE_FETCH, NOTE_FETCH_FAILURE, NOTE_FETCH_SUCCESS, NOTE_UPDATE, NOTES_FETCH_FAILURE, NOTES_FETCH_LIST, NOTES_FETCH_SUCCESS } from "./actions";
+import { NOTE_ADD, NOTE_DELETE, NOTE_FETCH, NOTE_FETCH_FAILURE, NOTE_FETCH_SUCCESS, NOTE_UPDATE, NOTES_FETCH_FAILURE, NOTES_FETCH_LIST, NOTES_FETCH_SUCCESS } from "./actions";
 import { showSnackbar } from "./snackbar.action";
 
 export const fetchNote = (id: number) => async (dispatch: Dispatch) => {
@@ -26,6 +26,21 @@ export const fetchNotes = () => async (dispatch: Dispatch) => {
   } catch (error: unknown) {
     dispatch({ type: NOTES_FETCH_FAILURE });
     dispatch(showSnackbar('error', 'Failed to fetch notes'));
+  }
+};
+
+export const addNote = (note: Omit<NoteEntity, 'id'>) => async (dispatch: Dispatch) => {
+  try {
+    const response = await fetchWithTimeout(`${BACKEND_ROUTE_NOTES}`, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(note),
+    });
+    const data = await response.json();
+    dispatch({ type: NOTE_ADD, payload: data });
+    dispatch(showSnackbar('success', `Note ${note.title} added successfully`));
+  } catch (error: unknown) {
+    dispatch(showSnackbar('error', 'Failed to add note'));
   }
 };
 

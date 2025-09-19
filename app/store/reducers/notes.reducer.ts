@@ -1,4 +1,4 @@
-import { NOTE_DELETE, NOTE_FETCH, NOTE_FETCH_FAILURE, NOTE_FETCH_SUCCESS, NOTE_UPDATE, NOTES_FETCH_FAILURE, NOTES_FETCH_LIST, NOTES_FETCH_SUCCESS } from "../actions/actions";
+import { NOTE_ADD, NOTE_DELETE, NOTE_FETCH, NOTE_FETCH_FAILURE, NOTE_FETCH_SUCCESS, NOTE_UPDATE, NOTES_FETCH_FAILURE, NOTES_FETCH_LIST, NOTES_FETCH_SUCCESS } from "../actions/actions";
 import { NoteState } from "../types/notes.type";
 
 const initialState: NoteState = {
@@ -24,8 +24,11 @@ export const notesReducer = (state = initialState, action: any) => {
     case NOTES_FETCH_FAILURE:
       return { ...state, loading: false, list: [] };
 
-    // case NOTE_ADD:
-    //   return { ...state, list: [...state.list, action.payload] };
+    case NOTE_ADD:
+      return {
+        ...state,
+        list: [...state.list, action.payload]
+      };
 
     case NOTE_DELETE:
       return {

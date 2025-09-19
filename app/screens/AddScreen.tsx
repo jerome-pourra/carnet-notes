@@ -1,68 +1,30 @@
 import { AppDispatch } from '@/app/store/store';
 import { NativeStackScreenProps } from "@react-navigation/native-stack";
-import { useCallback, useEffect, useState } from "react";
+import { useCallback, useState } from "react";
 import { Button, Text, TextInput, View } from "react-native";
-import { useDispatch, useSelector } from 'react-redux';
-import { EmptyData } from '../components/Empty';
-import { Loading } from '../components/Loading';
+import { useDispatch } from 'react-redux';
 import { StackParamList } from '../components/Router';
-import { fetchNote, updateNote } from '../store/actions/notes.action';
-import { showSnackbar } from '../store/actions/snackbar.action';
-import { notesSelector } from '../store/selectors/notes.selector';
+import { addNote } from '../store/actions/notes.action';
 
-type UpdateScreenNavigationProp = NativeStackScreenProps<StackParamList, 'Update'>
+type AddScreenNavigationProp = NativeStackScreenProps<StackParamList, 'Add'>
 
-export const UpdateScreen = ({
+export const AddScreen = ({
   navigation,
-  route,
-}: UpdateScreenNavigationProp) => {
-  const { id } = route.params;
-  const { loading, item } = useSelector(notesSelector);
+}: AddScreenNavigationProp) => {
   const dispatch = useDispatch<AppDispatch>();
 
   const [title, setTitle] = useState<string>('');
   const [content, setContent] = useState<string>('');
 
-  const handleSave = useCallback(async () => {
-    if (!item) {
-      // WTF !!! t'es pas trop sencé avoir le btn 'save' si y'a pas d'item... la vue des details est pas rendu (you cheat in my app !!!)
-      dispatch(showSnackbar('error', 'No item to delete...'));
-      return;
-    }
-    await dispatch(updateNote({
-      ...item,
+  const handleAdd = useCallback(async () => {
+    await dispatch(addNote({
       title: title.trim(),
       content: content.trim(),
+      createdAt: new Date().toISOString(),
       updatedAt: new Date().toISOString(),
     }));
     navigation.goBack();
-  }, [dispatch, navigation, item, title, content]);
-
-  useEffect(() => {
-    dispatch(fetchNote(id));
-  }, [id, dispatch]);
-
-  useEffect(() => {
-    if (item) {
-      setTitle(item.title || '');
-      setContent(item.content || '');
-    }
-  }, [item]);
-
-  if (loading) {
-    return (
-      <Loading />
-    )
-  }
-
-  if (!item) {
-    // WTF !!! faut restart le server y'a des modifs qui ont été effectué sur db.json le state list est plus à jour...
-    return (
-      <EmptyData
-        title={`No data found for id ${id}`}
-      />
-    )
-  }
+  }, [dispatch, navigation, title, content]);
 
   return (
     <View>
@@ -93,7 +55,7 @@ export const UpdateScreen = ({
         </View>
       </View>
       <View style={{ marginTop: 24 }}>
-        <Button title="Save" onPress={handleSave} />
+        <Button title="Add" onPress={handleAdd} />
       </View>
     </View>
   );

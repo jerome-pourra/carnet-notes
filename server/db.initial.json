@@ -34,6 +34,181 @@
       "content": "\"Le succès, c'est se promener d'échec en échec tout en restant motivé.\" - Winston Churchill\n\n\"La seule façon de faire du bon travail, c'est d'aimer ce que vous faites.\" - Steve Jobs",
       "createdAt": "2025-09-19T12:10:33.000Z",
       "updatedAt": "2025-09-19T12:10:33.000Z"
+    },
+    {
+      "id": 6,
+      "title": "Planning semaine",
+      "content": "Lundi: Réunion équipe 9h\nMardi: Formation React Native 14h\nMercredi: Présentation projet 10h\nJeudi: Code review 15h\nVendredi: Retrospective 16h",
+      "createdAt": "2025-09-19T15:22:10.000Z",
+      "updatedAt": "2025-09-19T15:22:10.000Z"
+    },
+    {
+      "id": 7,
+      "title": "Livres à lire",
+      "content": "- Clean Code - Robert C. Martin\n- Design Patterns - Gang of Four\n- Atomic Habits - James Clear\n- The Pragmatic Programmer\n- You Don't Know JS",
+      "createdAt": "2025-09-18T20:45:33.000Z",
+      "updatedAt": "2025-09-19T08:12:15.000Z"
+    },
+    {
+      "id": 8,
+      "title": "Idées vacances été",
+      "content": "Destinations possibles:\n- Croatie (côte dalmate)\n- Portugal (Porto et Lisbonne)\n- Grèce (îles Cyclades)\n- Espagne (Andalousie)\n- Italie (Toscane)",
+      "createdAt": "2025-09-17T11:30:45.000Z",
+      "updatedAt": "2025-09-17T11:30:45.000Z"
+    },
+    {
+      "id": 9,
+      "title": "Exercices fitness",
+      "content": "Programme du jour:\n- 20 pompes\n- 30 squats\n- 15 burpees\n- 1 min planche\n- 25 abdos\n- Étirements 10 min",
+      "createdAt": "2025-09-19T06:00:00.000Z",
+      "updatedAt": "2025-09-19T06:00:00.000Z"
+    },
+    {
+      "id": 10,
+      "title": "Projet jardin",
+      "content": "Plantations automne:\n- Radis et épinards\n- Mâche et roquette\n- Oignons blancs\n- Fèves et petits pois\n- Préparer le compost",
+      "createdAt": "2025-09-16T18:15:30.000Z",
+      "updatedAt": "2025-09-18T14:22:18.000Z"
+    },
+    {
+      "id": 11,
+      "title": "Films à voir",
+      "content": "Liste cinéma:\n- Dune 2\n- Oppenheimer\n- The Menu\n- Everything Everywhere All at Once\n- Top Gun Maverick",
+      "createdAt": "2025-09-15T21:30:12.000Z",
+      "updatedAt": "2025-09-15T21:30:12.000Z"
+    },
+    {
+      "id": 12,
+      "title": "Recette pizza maison",
+      "content": "Pâte: 500g farine, 325ml eau, 1 sachet levure, 1 c.à.s huile olive, 1 c.à.c sel\nGarnisure: sauce tomate, mozzarella, basilic, jambon, champignons\nCuisson: 220°C pendant 12-15 min",
+      "createdAt": "2025-09-18T17:45:20.000Z",
+      "updatedAt": "2025-09-18T17:45:20.000Z"
+    },
+    {
+      "id": 13,
+      "title": "Objectifs 2026",
+      "content": "Personnel:\n- Apprendre l'espagnol\n- Faire un marathon\n- Lire 24 livres\nProfessionnel:\n- Certification AWS\n- Maîtriser React Native\n- Créer une app mobile",
+      "createdAt": "2025-09-14T12:00:00.000Z",
+      "updatedAt": "2025-09-19T10:15:30.000Z"
+    },
+    {
+      "id": 14,
+      "title": "Maintenance vélo",
+      "content": "À faire:\n- Vérifier pression pneus\n- Huiler la chaîne\n- Contrôler freins\n- Nettoyer dérailleur\n- Vérifier éclairage",
+      "createdAt": "2025-09-17T08:30:15.000Z",
+      "updatedAt": "2025-09-17T08:30:15.000Z"
+    },
+    {
+      "id": 15,
+      "title": "Cadeaux Noël",
+      "content": "Papa: livre cuisine\nMaman: écharpe cachemire\nSœur: parfum\nFrère: jeu vidéo\nNeveu: Lego\nNièce: livre jeunesse",
+      "createdAt": "2025-09-19T14:20:45.000Z",
+      "updatedAt": "2025-09-19T14:20:45.000Z"
+    },
+    {
+      "id": 16,
+      "title": "Méthode productivité",
+      "content": "Technique Pomodoro:\n- 25 min de travail focalisé\n- 5 min de pause\n- Après 4 cycles: pause 15-30 min\n- Noter les distractions\n- Évaluer la session",
+      "createdAt": "2025-09-16T09:15:22.000Z",
+      "updatedAt": "2025-09-16T09:15:22.000Z"
+    },
+    {
+      "id": 17,
+      "title": "Recettes smoothies",
+      "content": "Vert: épinards, pomme, banane, gingembre\nRouge: fraises, framboises, banane\nTropical: mangue, ananas, coco\nProtéiné: banane, beurre cacahuète, avoine",
+      "createdAt": "2025-09-15T07:45:10.000Z",
+      "updatedAt": "2025-09-15T07:45:10.000Z"
+    },
+    {
+      "id": 18,
+      "title": "Podcasts à écouter",
+      "content": "Tech:\n- Software Engineering Daily\n- JavaScript Jabber\n- React Native Radio\nCulture:\n- Les Regardeurs\n- 2 Heures de Perdues\n- Transfert",
+      "createdAt": "2025-09-18T16:30:33.000Z",
+      "updatedAt": "2025-09-18T16:30:33.000Z"
+    },
+    {
+      "id": 19,
+      "title": "Voyage Tokyo",
+      "content": "Préparatifs:\n- Réserver vol\n- Hôtel à Shibuya\n- JR Pass\n- Apprendre bases japonais\n- Visiter: Senso-ji, Fushimi Inari, Arashiyama",
+      "createdAt": "2025-09-17T13:22:18.000Z",
+      "updatedAt": "2025-09-18T11:45:20.000Z"
+    },
+    {
+      "id": 20,
+      "title": "Budget mensuel",
+      "content": "Revenus: 3200€\nCharges fixes: 1200€\nAlimentation: 400€\nTransport: 150€\nLoisirs: 300€\nÉpargne: 500€\nDivers: 650€",
+      "createdAt": "2025-09-16T19:10:25.000Z",
+      "updatedAt": "2025-09-19T09:30:12.000Z"
+    },
+    {
+      "id": 21,
+      "title": "Playlist coding",
+      "content": "Musiques pour coder:\n- Ludovico Einaudi\n- Max Richter\n- Nils Frahm\n- Ólafur Arnalds\n- GoGo Penguin\n- Kiasmos\n- Moderat",
+      "createdAt": "2025-09-15T14:18:40.000Z",
+      "updatedAt": "2025-09-15T14:18:40.000Z"
+    },
+    {
+      "id": 22,
+      "title": "Idées blog",
+      "content": "Articles à écrire:\n- React Native vs Flutter\n- État des SPA en 2025\n- TypeScript pour débutants\n- Redux vs Zustand\n- Tests E2E avec Detox",
+      "createdAt": "2025-09-18T10:45:15.000Z",
+      "updatedAt": "2025-09-18T10:45:15.000Z"
+    },
+    {
+      "id": 23,
+      "title": "Routine matinale",
+      "content": "6h30: Réveil\n6h45: Méditation 10 min\n7h00: Sport 30 min\n7h30: Douche\n8h00: Petit déjeuner\n8h30: Lecture 20 min\n9h00: Travail",
+      "createdAt": "2025-09-17T21:15:30.000Z",
+      "updatedAt": "2025-09-17T21:15:30.000Z"
+    },
+    {
+      "id": 24,
+      "title": "Projets DIY",
+      "content": "À réaliser:\n- Étagères salon\n- Jardinière balcon\n- Cadre photo personnalisé\n- Lampe design\n- Table basse palette",
+      "createdAt": "2025-09-16T15:33:22.000Z",
+      "updatedAt": "2025-09-16T15:33:22.000Z"
+    },
+    {
+      "id": 25,
+      "title": "Apprentissage guitare",
+      "content": "Semaine 1: Accords de base (Am, C, G, F)\nSemaine 2: Rythmes simples\nSemaine 3: Changements d'accords\nSemaine 4: Première chanson simple\nPratique: 30 min/jour",
+      "createdAt": "2025-09-14T16:20:18.000Z",
+      "updatedAt": "2025-09-18T19:10:25.000Z"
+    },
+    {
+      "id": 26,
+      "title": "Recette bread banana",
+      "content": "Ingrédients: 3 bananes mûres, 200g farine, 100g sucre, 1 œuf, 80ml huile, 1 c.à.c levure, pincée sel\nMélanger, cuire 50min à 180°C\nVariantes: noix, pépites chocolat",
+      "createdAt": "2025-09-19T11:25:40.000Z",
+      "updatedAt": "2025-09-19T11:25:40.000Z"
+    },
+    {
+      "id": 27,
+      "title": "Checklist déménagement",
+      "content": "2 mois avant: recherche logement\n1 mois avant: préavis, démarches admin\n2 semaines avant: cartons, services\n1 semaine avant: changement adresse\nJ-1: nettoyage, vérifications",
+      "createdAt": "2025-09-15T18:45:12.000Z",
+      "updatedAt": "2025-09-17T14:30:55.000Z"
+    },
+    {
+      "id": 28,
+      "title": "Formations en ligne",
+      "content": "Udemy: Advanced React patterns\nCoursera: Machine Learning\nPluralSight: Azure DevOps\nFreeCodeCamp: Data Science\nYouTube: Design System",
+      "createdAt": "2025-09-18T13:15:28.000Z",
+      "updatedAt": "2025-09-18T13:15:28.000Z"
+    },
+    {
+      "id": 29,
+      "title": "Idées sorties weekend",
+      "content": "Samedi:\n- Marché local le matin\n- Randonnée forêt\n- Cinéma soirée\nDimanche:\n- Brunch amis\n- Musée expo\n- Préparation semaine",
+      "createdAt": "2025-09-19T16:40:20.000Z",
+      "updatedAt": "2025-09-19T16:40:20.000Z"
+    },
+    {
+      "id": 30,
+      "title": "Maintenance appartement",
+      "content": "Mensuel: nettoyer VMC, vérifier robinets\nTrimestriel: détartrer appareils\nSemestriel: révision chaudière\nAnnuel: ramonage, contrôle électricité",
+      "createdAt": "2025-09-16T12:55:35.000Z",
+      "updatedAt": "2025-09-19T08:20:45.000Z"
     }
   ]
 }

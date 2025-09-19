@@ -47,8 +47,8 @@ export const DetailsScreen = ({
 
   useEffect(() => {
     // DEBUG
-    console.log(`Item ${id} updated:`, item?.title);
-  }, [item, id]);
+    console.log(`Item ${id} selector:`, item?.title);
+  }, [item]);
 
   if (loading) {
     return (
