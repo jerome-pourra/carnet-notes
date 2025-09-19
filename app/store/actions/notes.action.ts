@@ -29,6 +29,23 @@ export const fetchNotes = () => async (dispatch: Dispatch) => {
   }
 };
 
+// JSON Server v1.0+ removed support for query operators like _like, _gte, etc.
+// See: https://github.com/typicode/json-server/tree/v0?tab=readme-ov-file#operators
+// Issue discussion: https://stackoverflow.com/questions/77867124/json-server-get-poststitle-like-server-not-working
+// Alternative: implement client-side filtering
+// Avoiding version downgrade to maintain compatibility with latest dependencies
+export const searchNotes = (query: string) => async (dispatch: Dispatch) => {
+  dispatch({ type: NOTES_FETCH_LIST });
+  try {
+    const response = await fetchWithTimeout(`${BACKEND_ROUTE_NOTES}?title_like=${encodeURIComponent(query)}`, { method: 'GET' });
+    const data = await response.json();
+    dispatch({ type: NOTES_FETCH_SUCCESS, payload: data });
+  } catch (error: unknown) {
+    dispatch({ type: NOTES_FETCH_FAILURE });
+    dispatch(showSnackbar('error', 'Failed to search notes'));
+  }
+};
+
 export const addNote = (note: Omit<NoteEntity, 'id'>) => async (dispatch: Dispatch) => {
   try {
     const response = await fetchWithTimeout(`${BACKEND_ROUTE_NOTES}`, {

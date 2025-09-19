@@ -9,3 +9,8 @@ export const formatDate = (str: string): string => {
     timeZone: 'Europe/Paris'
   });
 };
+
+export const formatText = (str: string): string => {
+  // Remove accents and convert to lowercase
+  return str.normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase();
+}
